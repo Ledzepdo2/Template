@@ -8,11 +8,11 @@ objects = {
 /* Begin PBXBuildFile section */
 9A3A6B012C7C102D00A1A1A1 /* {{ProjectName}}App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE12C7C102D00A1A1A1; };
 9A3A6B022C7C102D00A1A1A1 /* AppBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE22C7C102D00A1A1A1; };
-9A3A6B032C7C102D00A1A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE32C7C102D00A1A1A1; };
-9A3A6B042C7C102D00A1A1A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE42C7C102D00A1A1A1; };
+9A3A6D032C7C102D00A1A1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE32C7C102D00A1A1A1; };
+9A3A6D042C7C102D00A1A1A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE42C7C102D00A1A1A1; };
 9A3A6B052C7C102D00A1A1A1 /* {{ProjectName}}Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A6AE62C7C102D00A1A1A1; };
-9A3A6B202C7C102D00A1A1A1 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B1E2C7C102D00A1A1A1; };
-9A3A6B212C7C102D00A1A1A1 /* MVVMFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B1F2C7C102D00A1A1A1; };
+9A3A6D202C7C102D00A1A1A1 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B1E2C7C102D00A1A1A1; };
+9A3A6D212C7C102D00A1A1A1 /* MVVMFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B1F2C7C102D00A1A1A1; };
 9A3A6B222C7C102D00A1A1A1 /* CleanFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B202C7C102D00A1A1A1; };
 9A3A6B232C7C102D00A1A1A1 /* TCAFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B212C7C102D00A1A1A1; };
 9A3A6B162C7C102D00A1A1A1 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3A6B152C7C102D00A1A1A1; };
@@ -48,8 +48,8 @@ runOnlyForDeploymentPostprocessing = 0;
 isa = PBXFrameworksBuildPhase;
 buildActionMask = 2147483647;
 files = (
-9A3A6B202C7C102D00A1A1A1 /* CoreKit in Frameworks */,
-9A3A6B212C7C102D00A1A1A1 /* MVVMFeature in Frameworks */,
+9A3A6D202C7C102D00A1A1A1 /* CoreKit in Frameworks */,
+9A3A6D212C7C102D00A1A1A1 /* MVVMFeature in Frameworks */,
 9A3A6B222C7C102D00A1A1A1 /* CleanFeature in Frameworks */,
 9A3A6B232C7C102D00A1A1A1 /* TCAFeature in Frameworks */,
 );
@@ -122,7 +122,7 @@ buildPhases = (
 9A3A6ACB2C7C102D00A1A1A1 /* Sources */,
 9A3A6ACC2C7C102D00A1A1A1 /* Frameworks */,
 9A3A6ACD2C7C102D00A1A1A1 /* Resources */,
-9A3A6B0F2C7C102D00A1A1A1 /* SwiftFormat */,
+9A3A6D0F2C7C102D00A1A1A1 /* SwiftFormat */,
 9A3A6B102C7C102D00A1A1A1 /* SwiftLint */,
 );
 dependencies = (
@@ -147,7 +147,7 @@ buildPhases = (
 9A3A6ACF2C7C102D00A1A1A1 /* Frameworks */,
 );
 dependencies = (
-9A3A6B122C7C102D00A1A1A1 /* PBXTargetDependency */,
+9A3A6D122C7C102D00A1A1A1 /* PBXTargetDependency */,
 );
 name = {{ProjectName}}Tests;
 packageProductDependencies = (
@@ -204,8 +204,8 @@ targets = (
 isa = PBXResourcesBuildPhase;
 buildActionMask = 2147483647;
 files = (
-9A3A6B032C7C102D00A1A1A1 /* Assets.xcassets in Resources */,
-9A3A6B042C7C102D00A1A1A1 /* Preview Assets.xcassets in Resources */,
+9A3A6D032C7C102D00A1A1A1 /* Assets.xcassets in Resources */,
+9A3A6D042C7C102D00A1A1A1 /* Preview Assets.xcassets in Resources */,
 );
 runOnlyForDeploymentPostprocessing = 0;
 };
@@ -219,7 +219,7 @@ runOnlyForDeploymentPostprocessing = 0;
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-9A3A6B0F2C7C102D00A1A1A1 /* SwiftFormat */ = {
+9A3A6D0F2C7C102D00A1A1A1 /* SwiftFormat */ = {
 isa = PBXShellScriptBuildPhase;
 buildActionMask = 2147483647;
 files = (
@@ -276,10 +276,10 @@ runOnlyForDeploymentPostprocessing = 0;
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-9A3A6B122C7C102D00A1A1A1 /* PBXTargetDependency */ = {
+9A3A6D122C7C102D00A1A1A1 /* PBXTargetDependency */ = {
 isa = PBXTargetDependency;
 target = 9A3A6ACE2C7C102D00A1A1A1 /* {{ProjectName}} */;
-targetProxy = 9A3A6B132C7C102D00A1A1A1 /* PBXContainerItemProxy */;
+targetProxy = 9A3A6D132C7C102D00A1A1A1 /* PBXContainerItemProxy */;
 };
 /* End PBXTargetDependency section */
 
@@ -520,7 +520,7 @@ relativePath = .;
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin PBXContainerItemProxy section */
-9A3A6B132C7C102D00A1A1A1 /* PBXContainerItemProxy */ = {
+9A3A6D132C7C102D00A1A1A1 /* PBXContainerItemProxy */ = {
 isa = PBXContainerItemProxy;
 containerPortal = 9A3A6AC62C7C102D00A1A1A1 /* Project object */;
 proxyType = 1;
