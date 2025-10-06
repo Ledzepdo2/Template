@@ -16,8 +16,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.3.0"),
-        .package(url: "https://github.com/pointfreeco/swift-case-paths.git", from: "0.14.0"),
-        .package(url: "https://github.com/pointfreeco/swift-identified-collections.git", from: "0.7.0"),
+        .package(url: "https://github.com/pointfreeco/swift-case-paths.git", from: "1.0.0"),
+        .package(url: "https://github.com/pointfreeco/swift-identified-collections.git", from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/swift-macro-testing.git", from: "0.3.0"),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.5.4"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "1.10.4"),
