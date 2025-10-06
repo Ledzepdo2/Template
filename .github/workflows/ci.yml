@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.0"
+      - name: Bootstrap project
+        run: |
+          ./Scripts/bootstrap.sh
+      - name: Run format check
+        run: |
+          ./Scripts/run_format.sh --lint
+      - name: Run lint
+        run: |
+          ./Scripts/run_lint.sh --strict
+      - name: Run tests
+        run: |
+          ./Scripts/run_tests.sh --ci
