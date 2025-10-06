@@ -1,0 +1,4 @@
+--swiftversion 6.0
+--recursive
+--exclude Modules/**/Generated
+--header ignore

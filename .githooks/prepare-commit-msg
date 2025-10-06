@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+BRANCH_NAME=$(git symbolic-ref --short HEAD 2>/dev/null || true)
+if [[ -z "$BRANCH_NAME" ]]; then
+  exit 0
+fi
+
+TEMPLATE="[${BRANCH_NAME}] "
+
+if [[ -f "$1" ]]; then
+  CONTENT=$(cat "$1")
+  if [[ "$CONTENT" != "" && "$CONTENT" != $'\n' ]]; then
+    exit 0
+  fi
+fi
+
+echo "$TEMPLATE" >> "$1"
