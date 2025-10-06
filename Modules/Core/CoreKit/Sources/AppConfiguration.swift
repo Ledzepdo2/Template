@@ -2,7 +2,7 @@ import Foundation
 import Dependencies
 import Logging
 
-public final class AppConfiguration {
+public struct AppConfiguration: Sendable {
     public enum Environment: String {
         case debug
         case release
@@ -18,16 +18,19 @@ public final class AppConfiguration {
         self.logger = logger
     }
 
+    @MainActor
     public func register() {
         AppConfigurationStorage.shared = self
         logger.info("Registering dependencies for environment: \(environment.rawValue)")
     }
 
+    @MainActor
     public static var current: AppConfiguration {
         AppConfigurationStorage.shared
     }
 }
 
+@MainActor
 private enum AppConfigurationStorage {
     static var shared = AppConfiguration()
 }

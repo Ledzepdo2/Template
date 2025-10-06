@@ -2,8 +2,8 @@ import Foundation
 import Dependencies
 import Alamofire
 
-public struct NetworkingClient {
-    public var getJSON: @Sendable (_ url: URL) async throws -> Data
+public struct NetworkingClient: Sendable {
+    public let getJSON: @Sendable (_ url: URL) async throws -> Data
 
     public init(getJSON: @escaping @Sendable (_ url: URL) async throws -> Data) {
         self.getJSON = getJSON
