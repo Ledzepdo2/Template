@@ -7,8 +7,7 @@ final class CleanListInteractorTests: XCTestCase {
         let worker = WorkerStub(items: [.init(id: UUID(), title: "Hello", subtitle: "World")])
         let interactor = CleanListInteractor(presenter: presenter, worker: worker)
 
-        interactor.load()
-        try? await Task.sleep(nanoseconds: 50_000_000)
+        await interactor.load(request: .init())
 
         XCTAssertEqual(presenter.responses.count, 1)
         XCTAssertEqual(presenter.responses.first?.items.count, 1)

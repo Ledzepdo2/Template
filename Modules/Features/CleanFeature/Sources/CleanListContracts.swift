@@ -2,20 +2,22 @@ import Foundation
 import Dependencies
 import CoreKit
 
-public protocol CleanListBusinessLogic {
-    func load()
-    func refresh()
+public protocol CleanListBusinessLogic: AnyObject {
+    func load(request: CleanListModels.Request) async
+    func refresh(request: CleanListModels.Request) async
 }
 
+@MainActor
 public protocol CleanListPresentationLogic: AnyObject {
     func present(response: CleanListModels.Response)
 }
 
+@MainActor
 public protocol CleanListDisplayLogic: AnyObject {
     func display(viewModel: [CleanListModels.ViewModel])
 }
 
-public protocol CleanListWorkerProtocol {
+public protocol CleanListWorkerProtocol: Sendable {
     func fetchItems() async throws -> [CleanListModels.Item]
 }
 
@@ -45,3 +47,5 @@ public struct CleanListWorker: CleanListWorkerProtocol {
         let items: [ItemDTO]
     }
 }
+
+extension CleanListWorker: @unchecked Sendable {}

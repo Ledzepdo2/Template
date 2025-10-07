@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 public final class CleanListPresenter: CleanListPresentationLogic {
     private weak var view: CleanListDisplayLogic?
 

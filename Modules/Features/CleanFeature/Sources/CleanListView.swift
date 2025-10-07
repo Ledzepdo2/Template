@@ -26,13 +26,13 @@ public struct CleanListView: View {
                 if controller.items.isEmpty {
                     LottieLoopView(animationName: "Loading")
                         .frame(width: 120, height: 120)
-                        .task { controller.load() }
+                        .task { await controller.load() }
                 }
             }
             .navigationTitle("Clean Swift")
             .toolbar {
                 Button("Refresh") {
-                    controller.refresh()
+                    Task { await controller.refresh() }
                 }
             }
         }
@@ -46,12 +46,12 @@ final class CleanListController: ObservableObject, CleanListDisplayLogic {
     private lazy var presenter = CleanListPresenter(view: self)
     private lazy var interactor = CleanListInteractor(presenter: presenter)
 
-    func load() {
-        interactor.load()
+    func load() async {
+        await interactor.load(request: .init())
     }
 
-    func refresh() {
-        interactor.refresh()
+    func refresh() async {
+        await interactor.refresh(request: .init())
     }
 
     func display(viewModel: [CleanListModels.ViewModel]) {
