@@ -29,7 +29,7 @@ public final class MVVMLoaderViewModel {
         guard let url = imageURL else { return }
         imageState.isLoading = true
         do {
-            let response = try await pipeline.image(for: URLRequest(url: url))
+            let response = try await pipeline.image(for: ImageRequest(url: url))
             imageState.image = response.image
         } catch {
             logger.error("Image load failed: \(error.localizedDescription)")
