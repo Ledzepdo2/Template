@@ -36,11 +36,15 @@ private enum AppConfigurationStorage {
 }
 
 private enum LoggerKey: DependencyKey {
-    static let liveValue: Logger = AppConfigurationStorage.shared.logger
+    static var liveValue: Logger {
+        MainActor.assumeIsolated { AppConfigurationStorage.shared.logger }
+    }
 }
 
 private enum AppConfigurationKey: DependencyKey {
-    static let liveValue: AppConfiguration = AppConfigurationStorage.shared
+    static var liveValue: AppConfiguration {
+        MainActor.assumeIsolated { AppConfigurationStorage.shared }
+    }
 }
 
 public extension DependencyValues {
