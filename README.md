@@ -6,7 +6,7 @@ This repository is a fully automated Swift 6 / Xcode 16-ready template designed 
 
 ```bash
 # Clone the template
-git clone https://github.com/your-org/ios-template.git MyNewApp
+git clone https://github.com/Ledzepdo2/Template.git MyNewApp
 cd MyNewApp
 
 # Rename every placeholder occurrence
