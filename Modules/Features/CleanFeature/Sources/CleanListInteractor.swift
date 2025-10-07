@@ -12,31 +12,21 @@ public final class CleanListInteractor: CleanListBusinessLogic {
         self.worker = worker
     }
 
-    public func load() {
-        scheduleLoad()
+    public func load(request: CleanListModels.Request) async {
+        await performLoad()
     }
 
-    public func refresh() {
-        scheduleLoad()
+    public func refresh(request: CleanListModels.Request) async {
+        await performLoad()
     }
 
-    private func scheduleLoad() {
-        let worker = self.worker
-        let logger = self.logger
-
-        Task.detached(priority: nil) { [worker, logger, weak self] in
-            guard let self else { return }
-            do {
-                let items = try await worker.fetchItems()
-                await MainActor.run {
-                    self.presenter.present(response: .init(items: items))
-                }
-            } catch {
-                logger.error("CleanListInteractor error: \(error.localizedDescription)")
-                await MainActor.run {
-                    self.presenter.present(response: .init(items: []))
-                }
-            }
+    private func performLoad() async {
+        do {
+            let items = try await worker.fetchItems()
+            await presenter.present(response: .init(items: items))
+        } catch {
+            logger.error("CleanListInteractor error: \(error.localizedDescription)")
+            await presenter.present(response: .init(items: []))
         }
     }
 }

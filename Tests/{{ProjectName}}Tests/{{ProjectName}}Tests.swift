@@ -15,8 +15,7 @@ final class {{ProjectName}}Tests: XCTestCase {
     func testCleanInteractor() async {
         let presenter = SpyPresenter()
         let interactor = CleanListInteractor(presenter: presenter, worker: MockWorker())
-        interactor.load()
-        try? await Task.sleep(nanoseconds: 50_000_000)
+        await interactor.load(request: .init())
         XCTAssertEqual(presenter.presentCalls.count, 1)
     }
 
@@ -28,6 +27,7 @@ final class {{ProjectName}}Tests: XCTestCase {
     }
 }
 
+@MainActor
 private final class SpyPresenter: CleanListPresentationLogic {
     var presentCalls: [CleanListModels.Response] = []
 
