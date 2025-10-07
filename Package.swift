@@ -49,7 +49,8 @@ let package = Package(
             name: "MVVMFeature",
             dependencies: [
                 "CoreKit",
-                .product(name: "Nuke", package: "Nuke")
+                .product(name: "Nuke", package: "Nuke"),
+                .product(name: "Alamofire", package: "Alamofire")
             ],
             path: "Modules/Features/MVVMFeature/Sources"
         ),
